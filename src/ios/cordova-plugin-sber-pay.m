@@ -1,15 +1,15 @@
-/********* cordova-plugin-link-checker.m Cordova Plugin Implementation *******/
+/********* cordova-plugin-sber-pay.m Cordova Plugin Implementation *******/
 
 #import <Cordova/CDV.h>
 
-@interface cordova-plugin-link-checker : CDVPlugin {
+@interface cordova-plugin-sber-pay : CDVPlugin {
   // Member variables go here.
 }
 
 - (void)coolMethod:(CDVInvokedUrlCommand*)command;
 @end
 
-@implementation cordova-plugin-link-checker
+@implementation cordova-plugin-sber-pay
 
 - (void)coolMethod:(CDVInvokedUrlCommand*)command
 {

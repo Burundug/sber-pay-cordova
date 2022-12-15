@@ -20,11 +20,12 @@ class sberPay : CordovaPlugin() {
         callbackContext: CallbackContext
     ): Boolean {
         var result = true
-        if (action == "coolMethod") {
+        if (action == "initPay") {
             context = callbackContext
-            var str: String = "dsd2e12d1123";
-            initSberPay(str)
-//                val obj: JSONObject = data.getJSONObject(0)
+
+                    val obj: JSONObject = data.getJSONObject(0)
+
+            initSberPay(obj.get("sbolBankInvoiceId").toString())
         }
 
         return result
