@@ -1,0 +1,20 @@
+repositories{
+ jcenter()
+   flatDir {
+     dirs 'src/main/libs'
+   }
+}
+
+dependencies {
+   implementation (name:'sberpaysdk', ext:'aar')
+}
+
+
+android {
+//     compileSdkVersion cordovaConfig.COMPILE_SDK_VERSION
+//     buildToolsVersion cordovaConfig.BUILD_TOOLS_VERSION
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}

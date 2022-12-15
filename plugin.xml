@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-sber-pay" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>cordova-plugin-sber-pay</name>
+    <js-module name="sberPay" src="www/cordova-plugin-sber-pay.js">
+        <clobbers target="window.sberPay"/>
+    </js-module>
+    <engines>
+        <engine name="cordova" version="&gt;=8.0.0"/>
+        <engine name="cordova-android" version="&gt;=8.0.0"/>
+    </engines>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <preference name="GradlePluginKotlinEnabled" value="true" />
+            <preference name="GradlePluginKotlinCodeStyle" value="official" />
+            <feature name="sberPay">
+                <param name="android-package" value="cordova.plugin.sber.pay.sberPay"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference"/>
+        <config-file parent="/*" target="AndroidManifest.xml"/>
+        <source-file  src="src/android/sberPay.kt" target-dir="src/main/kotlin/cordova/plugin/sber/pay/sberPay"/>
+        <resource-file src="src/android/libs/sberpaysdk.aar" target="libs/sberpaysdk.aar" />
+    </platform>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="cordova-plugin-sber-pay">
+                <param name="ios-package" value="cordova-plugin-sber-pay"/>
+            </feature>
+        </config-file>
+        <source-file src="src/ios/cordova-plugin-sber-pay.m"/>
+    </platform>
+</plugin>
