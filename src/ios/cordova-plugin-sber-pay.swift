@@ -6,6 +6,13 @@ import SberPaySDK
     /**
      * Check device for ApplePay capability
      */
+    @objc(checkSbol:) func checkSbol(command: CDVInvokedUrlCommand){
+        self.sberPayId = command.callbackId;
+
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: SberPay.isSberbankAppInstalled)
+        commandDelegate.send(result, callbackId: sberPayId)
+
+    }
     @objc(initPay:) func initPay(command: CDVInvokedUrlCommand){
         self.sberPayId = command.callbackId;
         do {
