@@ -2,14 +2,14 @@
 
 #import <Cordova/CDV.h>
 
-@interface cordova-plugin-sber-pay : CDVPlugin {
+@interface sberPay : CDVPlugin {
   // Member variables go here.
 }
 
 - (void)coolMethod:(CDVInvokedUrlCommand*)command;
 @end
 
-@implementation cordova-plugin-sber-pay
+@implementation sberPay
 
 - (void)coolMethod:(CDVInvokedUrlCommand*)command
 {

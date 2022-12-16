@@ -25,11 +25,16 @@
         <resource-file src="src/android/libs/sberpaysdk.aar" target="libs/sberpaysdk.aar" />
     </platform>
     <platform name="ios">
-        <config-file parent="/*" target="config.xml">
+        <config-file target="config.xml" parent="/*">
             <feature name="cordova-plugin-sber-pay">
-                <param name="ios-package" value="cordova-plugin-sber-pay"/>
+                <param name="ios-package" value="sberPay"/>
             </feature>
         </config-file>
-        <source-file src="src/ios/cordova-plugin-sber-pay.m"/>
+
+        <framework src="src/ios/SberPaySDK.xcframework" custom="true" embed="true" />
+<!--        <source-file src="src/ios/cordova-plugin-sber-pay.m"/>-->
+        <source-file src="src/ios/cordova-plugin-sber-pay.swift"/>
     </platform>
+
+
 </plugin>
